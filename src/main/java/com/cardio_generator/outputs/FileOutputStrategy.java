@@ -7,6 +7,11 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Implementation of {@link OutputStrategy} that persists patient data to text files.
+ * Each data label (e.g., "ECG", "Saturation") is stored in its own dedicated file 
+ * within a specified base directory
+ */
 public class FileOutputStrategy implements OutputStrategy {
 
     // Changed variable name to camelCase
@@ -16,13 +21,22 @@ public class FileOutputStrategy implements OutputStrategy {
     private final ConcurrentHashMap<String, String> file_map = new ConcurrentHashMap<>();
     //added Javadoc
     /**
-     * Implements OutputStrategy for writing output for patients
+     * Constructs a new FileOutputStrategy with a target directory
+     * * @param baseDirectory The path to the directory where output files will be created
      */
     public FileOutputStrategy(String baseDirectory) {
         // Changed variable name to camelCase
         this.baseDirectory = baseDirectory;
     }
 
+    /**
+     * Writes a patient record to a label-specific text file
+     * If the base directory does not exist, it attempts to create it
+     * * @param patientId The unique identifier of the patient
+     * @param timestamp The time in milliseconds when the measurement occurred
+     * @param label The type of data, used as the filename (e.g., "HeartRate")
+     * @param data The measurement value to be recorded
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         try {

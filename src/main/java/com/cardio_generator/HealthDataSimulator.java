@@ -26,6 +26,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ * The main entry point for the heart rate monitoring simulation.
+ * This class handles command-line argument parsing, initializes patient data generators,
+ * and schedules periodic data generation tasks using a thread pool. 
+ */
+
 public class HealthDataSimulator {
 
     private static int patientCount = 50; // Default number of patients
@@ -33,6 +39,11 @@ public class HealthDataSimulator {
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
 
+    /**
+     * Main method to start the simulation. 
+     * * @param args Command-line arguments for configuring the simulation. 
+     * @throws IOException If there is an error setting up file-based output directories. 
+     */
     public static void main(String[] args) throws IOException {
 
         parseArguments(args);
@@ -45,6 +56,11 @@ public class HealthDataSimulator {
         scheduleTasksForPatients(patientIds);
     }
 
+    /**
+     * Parses command-line arguments to configure patient count and output strategies.
+     * * @param args The array of command-line arguments.
+     * @throws IOException If a specified output directory cannot be created.
+     */
     private static void parseArguments(String[] args) throws IOException {
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
