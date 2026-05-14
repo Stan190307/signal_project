@@ -52,7 +52,6 @@ public class Patient {
      *         range
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
-<<<<<<< HEAD
         List<PatientRecord> filteredRecords = new ArrayList<>();
         // Iterate through all records for this patient
         for (PatientRecord record : this.patientRecords) {
@@ -63,8 +62,6 @@ public class Patient {
         }
     
         return filteredRecords;
-=======
-        return patientRecords;
->>>>>>> 5e291bde8a1149f53f5785d35f5579ffd25772e0
+
     }
 }
