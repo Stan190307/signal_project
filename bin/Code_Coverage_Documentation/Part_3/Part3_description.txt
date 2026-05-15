@@ -1,0 +1,24 @@
+Tested Components
+
+AlertGenerator: 
+Achieved high coverage for all clinical alert types, 
+including Blood Pressure Trends, Rapid Saturation Drops, 
+Critical Thresholds, Abnormal ECG Peaks, and Manual Hardware Triggers.
+
+FileDataReader: 
+The parsing logic was fully tested to ensure that .txt files from the 
+simulation are accurately converted into PatientRecord objects and 
+stored in DataStorage.
+Note: 
+In terminal, it shows an error for parsing Alerts. This is normal because
+values are a string
+
+Patient & DataStorage: 
+Core methods for data retrieval and time-frame filtering (getRecords) 
+were validated to ensure data integrity
+
+
+Untested:
+
+Certain catch blocks re difficult to trigger in a standard unit test 
+environment without simulating hardware or file system failures.

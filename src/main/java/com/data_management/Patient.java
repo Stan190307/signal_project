@@ -13,6 +13,11 @@ public class Patient {
     private int patientId;
     private List<PatientRecord> patientRecords;
 
+    //Added a patientID getter
+    public int getPatientId() {
+        return this.patientId;
+    }
+
     /**
      * Constructs a new Patient with a specified ID.
      * Initializes an empty list of patient records.

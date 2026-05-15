@@ -1,0 +1,10 @@
+Patient ID: 3, Timestamp: 1778844427322, Label: WhiteBloodCells, Data: 6.338724346094427
+Patient ID: 1, Timestamp: 1778844547312, Label: WhiteBloodCells, Data: 4.759707902746101
+Patient ID: 3, Timestamp: 1778844547312, Label: WhiteBloodCells, Data: 6.05272440289869
+Patient ID: 5, Timestamp: 1778844547312, Label: WhiteBloodCells, Data: 5.367001303484577
+Patient ID: 2, Timestamp: 1778844547312, Label: WhiteBloodCells, Data: 8.179120270387008
+Patient ID: 3, Timestamp: 1778844667315, Label: WhiteBloodCells, Data: 6.339700997349558
+Patient ID: 2, Timestamp: 1778844667315, Label: WhiteBloodCells, Data: 7.400877796117703
+Patient ID: 4, Timestamp: 1778844667315, Label: WhiteBloodCells, Data: 7.511236120541616
+Patient ID: 5, Timestamp: 1778844667315, Label: WhiteBloodCells, Data: 5.774780943020519
+Patient ID: 1, Timestamp: 1778844667315, Label: WhiteBloodCells, Data: 5.090570913715424

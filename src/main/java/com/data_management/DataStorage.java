@@ -15,6 +15,10 @@ import com.alerts.AlertGenerator;
 public class DataStorage {
     private Map<Integer, Patient> patientMap; // Stores patient objects indexed by their unique patient ID.
     private DataReader reader;
+    
+    public Patient getPatient(int patientId) {
+        return this.patientMap.get(patientId);
+    }
 
     /**
      * Constructs a new instance of DataStorage, initializing the underlying storage
