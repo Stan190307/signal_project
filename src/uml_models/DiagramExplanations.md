@@ -32,7 +32,7 @@ The SecureDataStorage class has an association with the AccessControl class beca
 There is also a separate DeletionPolicy class. This follows the Single Responsibility Principle, making the system easier to maintain and allowing the deletion policy to be changed in the future without affecting other classes.
 The DataRetriever class has an association with the DataStorage interface because it handles data queries.
 
-Overall this design improves security and flexibility by separating responsibilities and using abstraction to hide internal details
+- Overall this design improves security and flexibility by separating responsibilities and using abstraction to hide internal details
 
 ## Patient Identification System 
 The Patient Identification System links incoming data to the correct patient and handles mismatches and special cases.
@@ -43,8 +43,10 @@ The IncomingPatientData class has a dependency on the PatientIdentifier class be
 When no match is found, the PatientIdentifier class calls the noMatch method.
 The hospital patient data is stored in a separate class to keep responsibilities separated. This data is used by the IdentityManager class, which manages patient mismatches and anomalies.
 The IdentityManager class has an aggregation relationship with the HospitalPatient class. This means that the IdentityManager uses HospitalPatient objects, but the patients can exist independently of the manager. This creates a weak relationship between the two classes.
-The IdentityManager class also has a dependency relationship with the PatientIdentifier class because it temporarily uses it to evaluate mismatches detected during patient identification.
-Overall this design separates responsibilities and tries to improve flexibility within the identification system
+The IdentityManager class also has a dependency relationship with the PatientIdentifier class because it temporarily uses it to evaluate
+mismatches detected during patient identification.
+
+- Overall this design separates responsibilities and tries to improve flexibility within the identification system
 
 ## Data Access Layer
 The Data Access Layer is responsible for retrieving and parsing data into multiple usable objects. In this design, 
@@ -58,5 +60,6 @@ The DataSourceAdapter acts as the central component of the system. It listens fo
 and forwards parsed data to the DataStorage class. This separates responsibilities between receiving, processing, and storing data, 
 ensuring that each class has a single responsibility. The DataParser creates PatientData objects from raw incoming data, creating an association between the two classes because of their structural relationship.
 The DataStorage class stores patient records and provides methods to retrieve patient information and records when needed. 
-The separation between listening and parsing through data helps maintainability between the classes. 
-Overall, this design improves flexibility and abstraction by separating responsibilities and reducing dependencies between classes.
+The separation between listening and parsing through data helps maintainability between the classes.
+
+- Overall, this design improves flexibility and abstraction by separating responsibilities and reducing dependencies between classes.
